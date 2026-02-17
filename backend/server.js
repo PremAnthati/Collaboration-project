@@ -8,13 +8,24 @@ connectDB();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// CORS configuration
+app.use(cors({
+  origin: "http://localhost:5173",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+}));
+
+// Handle preflight requests
+
 app.use(express.json());
 
 // Routes
+const authRoutes = require("./routes/authRoutes");
+app.use("/api/auth", authRoutes);
+
+// Test route
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("API running");
 });
 
 const PORT = process.env.PORT || 5000;

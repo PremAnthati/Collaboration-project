@@ -1,0 +1,162 @@
+/* Dashboard Layout */
+.dashboard-container {
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.dashboard-header {
+    background-color: var(--surface);
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.dashboard-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+.header-actions button {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s var(--ease-smooth);
+}
+
+.header-actions button:hover {
+    background-color: var(--background);
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+/* Grid Layout */
+.dashboard-content {
+    padding: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card Styles */
+.dashboard-card {
+    background-color: var(--surface);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    transition: all 0.3s var(--ease-smooth);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: #e0e7ff;
+    /* indigo-100 */
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: transform 0.3s var(--ease-elastic);
+}
+
+.dashboard-card:hover .card-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0.5rem 0;
+}
+
+.card-trend {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.trend-up {
+    color: #10b981;
+}
+
+/* emerald-500 */
+.trend-down {
+    color: #ef4444;
+}
+
+/* red-500 */
+.trend-neutral {
+    color: var(--text-secondary);
+}
+
+/* Animation Staggering for Grid Items */
+.dashboard-card:nth-child(1) {
+    animation-delay: 100ms;
+}
+
+.dashboard-card:nth-child(2) {
+    animation-delay: 200ms;
+}
+
+.dashboard-card:nth-child(3) {
+    animation-delay: 300ms;
+}
+
+.dashboard-card:nth-child(4) {
+    animation-delay: 400ms;
+}
+
+.dashboard-card:nth-child(5) {
+    animation-delay: 500ms;
+}
+
+.dashboard-card:nth-child(6) {
+    animation-delay: 600ms;
+}
